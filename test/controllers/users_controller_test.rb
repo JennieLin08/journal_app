@@ -15,7 +15,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get create" do
-    post create_user_path, params:{user:{name:"jen",email:"user@mail.com",password:"12345"}}
+    post users_path, params:{user:{name:"jen",email:"user@mail.com",password:"12345"}}
     assert_response :redirect
   end
 end

@@ -1,0 +1,40 @@
+<div>
+    <h1 class="m-2 text-center "> Register</h1>
+</div>
+
+<div class="signup shadow-lg p-3 mb-5 bg-dark bg-gradient rounded">
+    <%= form_with model: @user, url: register_path , data: { turbo: false } do |f| %>
+        <% if @user.errors.any? %>
+            <div class="alert alert-danger">
+                <% @user.errors.full_messages.each do |m| %>
+                    <div><%= m %></div>
+                <% end %>
+            </div>
+        <% end %>
+
+        <div class="form-group mb-3">
+            <%= f.text_field :name, placeholder: "username" , :class=>"form-control  text-center" %>
+        </div>
+        <div class="form-group mb-3">
+            <%= f.text_field :email, placeholder: "Email Address" , :class=>"form-control text-center" %>
+        </div>
+        <div class="form-group mb-3">
+            <%= f.password_field :password , placeholder: "Password", :class=>"form-control text-center"  %>
+        </div>
+        <div class="form-group mb-3">
+            <%= f.password_field :password_confirmation , placeholder: "Confirm Password" , :class=>"text-center form-control" %>
+        </div>
+            
+        <div  class="form-group mb-3">
+            <%= f.submit "Sign Up" , :class=>"btn btn-warning bg-gradient text-center form-control " %>
+        </div>
+       
+    <% end %>
+</div>
+
+
+
+
+ 
+
+  
