@@ -1,5 +1,5 @@
-<div>
-    <h1 class="m-2 text-center "> Register</h1>
+<div class="divmt">
+    <h1 class="m-2 text-center "> Register </h1>
 </div>
 
 <div class="signup shadow-lg p-3 mb-5 bg-dark bg-gradient rounded">
@@ -28,6 +28,11 @@
         <div  class="form-group mb-3">
             <%= f.submit "Sign Up" , :class=>"btn btn-warning bg-gradient text-center form-control " %>
         </div>
+
+        
+        <small id="emailHelp" class="form-text text-white">Already have an account? 
+        <a class="" href="/login">Login here</a>
+        </small>
        
     <% end %>
 </div>

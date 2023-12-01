@@ -1,0 +1,17 @@
+<nav class="navbar fixed-top navbar-dark bg-dark w-100">
+  <div class="container-fluid">
+    <a class="navbar-brand">Journal App</a>
+      <div class="d-flex align-items-center">
+        <% if current_user %>
+          <span class="text-info m-2"> Online : <%= current_user.name %> </span>
+          <%= button_to "Logout", logout_path ,method: :delete, :class=>"btn btn-warning bg-gradient m-1" %>
+        <% else %>
+          <%# button_to "Login", login_path,:class=>"btn btn-warning m-1" %>
+          <a class="btn btn-warning m-1" href="/login">Login </a>
+        <% end %>
+      </div>
+      
+
+  </div>
+</nav>
+

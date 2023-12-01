@@ -8,8 +8,8 @@ class RegistrationsController < ApplicationController
         @user = User.new(user_params)
         # render plain: params[:user]
         if @user.save
-            session[:user_id] = @user.id
-            redirect_to root_path, notice:"Registered Successfully!"
+            # session[:user_id] = @user.id
+            redirect_to login_path, notice:"Registered Successfully!"
         else
             render :new
         end

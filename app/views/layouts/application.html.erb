@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>JournalApp</title>
+    <%= favicon_link_tag asset_path('img.jpg') %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,7 +13,10 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="container">
-    <%= yield %>
-  </body>
+
+  <%= render partial: "shared/navbar" %>
+    <body class="container bodymt">
+      <%= render partial: "shared/flash" %>
+      <%= yield %>
+    </body>
 </html>

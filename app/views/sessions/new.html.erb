@@ -1,0 +1,22 @@
+
+<div class="divmt">
+    <h1 class="m-2 text-center "> Login </h1>
+</div>
+<div class="signup shadow-lg p-3 mb-5 bg-dark bg-gradient rounded">
+
+    <%= form_tag sessions_path , remote: true do %>
+        <div class="form-group mb-3">
+            <%= text_field_tag :email, nil, placeholder: "Email Address", :attr=>"autocomplete", :class=>"form-control  text-center" %>
+        </div>
+        <div class="form-group mb-3">
+            <%= password_field_tag :password, nil, placeholder: "Password", :attr=>"autocomplete", :class=>"form-control  text-center" %>
+        </div>
+        <div class="form-group mb-3">
+            <%= submit_tag "Log In" , :class=>"btn btn-warning bg-gradient text-center form-control "%>
+        </div>
+        <small id="emailHelp" class="form-text text-white">Don't have an account? 
+        <a class="" href="/register">Register</a>
+        </small>
+    <% end %>
+
+  </div>

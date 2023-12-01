@@ -1,5 +1,5 @@
 .signup{
-    background-color: rgba(42, 165, 165, 0.384);
+    /* background-color: rgba(42, 165, 165, 0.384); */
     border-radius: 20px;
     
     width: 50%;
@@ -15,4 +15,20 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+small{
+    color: white !important;
+}
+
+/* .flash{
+    margin-top: 80px;
+} */
+.bodymt{
+    margin-top: 80px;
+}
+.divmt{
+    margin-top: 30px;
 }
