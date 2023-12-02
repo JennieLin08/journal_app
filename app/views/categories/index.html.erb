@@ -1,0 +1,25 @@
+
+<main class="container">
+  <div class="header">
+    <h1>Categories</h1>
+    <%= link_to "+ New Category",
+                new_category_path,
+                class: "btn btn-link" %>
+  </div>
+
+  <div class="category">
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= render @categories %>
+  </tbody>
+  </table>
+  
+  </div>
+</main>
