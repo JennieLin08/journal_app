@@ -37,7 +37,9 @@
             <h5> Task/s for todaaay!</h5>
             <% @tasks.each do |task| %>
                 <ul>
-                  <li> <%= task.task_name %></li>
+                  <% if task.deadline == Date.today %>
+                    <li> <%= task.task_name %> </li>
+                  <% end  %>
                 </ul>
               <% end %>
            
