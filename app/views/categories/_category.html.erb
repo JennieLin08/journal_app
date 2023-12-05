@@ -1,12 +1,12 @@
 
   <tr class="d-flex flex-row align-items-center ">
     <td>
-      <th><%= link_to category.category_name, category_path(category)  %></th>
+      <th><%= link_to category.category_name, category_tasks_path(category)  %></th>
     </td>
    
     <td class=" d-flex flex-row align-items-center justify-content-end">
       <%= link_to "Edit", edit_category_path(category)  %>
       <%= button_to "Del", category, method: :delete ,
-      class: "btn btn-link" %>
+      class: "btn btn-link text-danger" %>
     </td>
   </tr>

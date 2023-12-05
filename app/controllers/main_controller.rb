@@ -1,11 +1,13 @@
 class MainController < ApplicationController
+
     def index
-        # flash.now[:notice] = "Welcome to Journal App"
-        # flash[:alert] = "Invalid Email or Password!"
         @categories = Category.where(user_id: current_user.id)
+        # @category_tasks = @categories.tasks.where(:deadline => Date.today)
+        @tasks = Task.where(category_id:current_user.categories.map(&:id))
         
         if session[:user_id]
             @user = User.find(session[:user_id])
         end
     end
+
 end

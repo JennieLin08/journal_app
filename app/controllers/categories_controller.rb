@@ -4,9 +4,12 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.where(user_id: current_user.id)
+    @tasks = Task.where(category_id:current_user.categories.map(&:id))
   end
 
   def show
+    @categories = Category.find(params[:id])
+
   end
 
   def new

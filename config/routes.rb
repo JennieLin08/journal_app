@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # resources :users
-  resources :categories 
-  
+  resources :categories do
+    resources :tasks, only: [:index, :new, :create ,:edit, :update , :destroy]
+  end
+
+ 
   get "/register", to: "registrations#new"
   post "/register", to: "registrations#create"
-  root "main#index"
+  get "/", to: "main#index", as: "root"
+  get "/alltasks", to: "tasks#alltasks"
 
   delete '/logout', to: 'sessions#destroy'
   get '/login', to: 'sessions#new'

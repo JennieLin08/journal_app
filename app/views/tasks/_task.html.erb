@@ -1,0 +1,30 @@
+<tr class="d-flex flex-row align-items-center ">
+    <td>
+        <th><%# link_to task.task_name, edit_category_task_path(task)  %> <%= task.task_name %></th>
+    </td>
+
+    <td>
+        <%=  task.desc  %>
+    </td>
+
+    <td>
+        <%=  task.deadline.strftime('%b %d %Y') %>
+    </td>
+
+    <td>
+        <%#  task.status %>
+
+            <% if task.status == "false" %>
+                <span>Pending</span>
+            <% else %>
+                <span>Completed</span>
+            <% end %>
+    </td>
+
+    <td class=" d-flex flex-row align-items-center justify-content-end">
+        <%= link_to 'Edit', edit_category_task_path(task.category_id, task) %>
+        <%= button_to "Del", category_task_path(task.category_id, task.id), method: :delete ,
+            class: "btn btn-link text-danger" %>
+    </td>
+</tr>
+   

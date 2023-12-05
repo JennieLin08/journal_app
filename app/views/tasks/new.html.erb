@@ -1,0 +1,13 @@
+<main class="container">
+
+  <%= link_to "Back",
+  category_tasks_path,
+  class: "btn btn-link" %>
+
+
+  <div class="header">
+    <h1>New task</h1>
+  </div>
+
+  <%= render "form", category_task: @category_task %>
+</main>
