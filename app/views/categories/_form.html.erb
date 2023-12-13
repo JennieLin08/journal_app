@@ -5,7 +5,7 @@
         <%= category.errors.full_messages.to_sentence.capitalize %>
       </div>
     <% end %>
-  
+ 
     <%= f.text_field :category_name %>
     <%= f.hidden_field :user_id, :value=>current_user.id %>
     <%= f.submit "Save" ,class: "btn btn-dark" %>

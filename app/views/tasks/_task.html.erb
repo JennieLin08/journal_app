@@ -22,9 +22,14 @@
     </td>
 
     <td class=" d-flex flex-row align-items-center justify-content-end">
-        <%= link_to 'Edit', edit_category_task_path(task.category_id, task) %>
-        <%= button_to "Del", category_task_path(task.category_id, task.id), method: :delete ,
-            class: "btn btn-link text-danger" %>
+        <%= link_to edit_category_task_path(task.category_id, task) do %>
+            <i class="fa-solid fa-pen-to-square"></i>
+            <% end %>
+
+        <%= button_to  category_task_path(task.category_id, task.id), method: :delete ,
+            class: "btn btn-link text-danger" do %>
+                <i class="fa-solid fa-trash"></i>
+                <% end %>
     </td>
 </tr>
    

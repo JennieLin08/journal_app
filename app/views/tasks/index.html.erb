@@ -15,14 +15,41 @@
   <table class="table">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Task</th>
+        <th >Task</th>
+        <th >Description</th>
+        <th >Date</th>
+        <th >Status</th>
+        <th >Action</th>
 
       </tr>
     </thead>
       <tbody>
+      
+          <%# render @category_tasks %>
+          <% @category_tasks.each do |task| %>
+         <tr>
+            <td><%= task.task_name %></td>
+            <td><%=  task.desc  %></td>
+            <td><%=  task.deadline.strftime('%b %d %Y') %></td>
+            <td>
+              <% if task.status == "false" %>
+                  <span>Pending</span>
+              <% else %>
+                  <span>Completed</span>
+              <% end %>
+            </td>
+            <td class=" d-flex flex-row align-items-center justify-content-end">
+            <%= link_to edit_category_task_path(task.category_id, task) do %>
+                <i class="fa-solid fa-pen-to-square"></i>
+                <% end %>
 
-          <%= render @category_tasks %>
-          
+            <%= button_to  category_task_path(task.category_id, task.id), method: :delete ,
+                class: "btn btn-link text-danger" do %>
+                    <i class="fa-solid fa-trash"></i>
+                    <% end %>
+            </td>
+         </tr>
+         <% end %>
       </tbody>
   </table>
 

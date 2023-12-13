@@ -16,15 +16,38 @@
                 <div class="category">
             
                 <table class="table">
-                <thead class="thead-dark">
-                    <tr >
-                    <th scope="col">Name</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <%= render @categories %>
-                </tbody>
+                
+                    <thead class="thead-dark">
+                        <tr >
+                            <th scope="col">Cat id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">_Action_</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <%# render @categories %>
+                        
+                        <%  @categories.each do |category| %>
+                           
+                        
+                       <tr>
+                            <td><h6><%=  category.id  %></h6> </td>
+                            <td><h5><%= link_to category.category_name, category_tasks_path(category)  %></h5></td>
+                            <td class=" d-flex flex-row align-items-center justify-content-end"> 
+                            <%= link_to  edit_category_path(category)   do %>
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                <% end %>
+                        
+                                <%= button_to  category, method: :delete ,
+                                class: "btn btn-link text-danger "  do %>
+                                <i class="fa-solid fa-trash"></i>
+                                <% end %> </td>
+                       </tr>
+                       <% end %>
+                    </tbody>
+                    
+                    
                 </table>
                 
                 </div>
@@ -32,15 +55,18 @@
         </div>
     </div>
 
-    <div class=" d-flex align-items-center  m-5 border border-dark rounded p-2">
+    <div class=" d-flex align-items-center  m-5 border border-dark rounded p-4">
         <div>
             <h5> Task/s for todaaay!</h5>
+                <%# @tasks.count   %> 
+                
             <% @tasks.each do |task| %>
                 <ul>
-                  <% if task.deadline == Date.today %>
-                    <li> <%= task.task_name %> </li>
-                  <% end  %>
-                </ul>
+                  <% if task.deadline == Date.today  && task.status == "false" %>
+                 
+                    <li> <%= task.task_name %> - <%= task.category_id %> </li>
+                  <% end %>
+              </ul>
               <% end %>
            
 

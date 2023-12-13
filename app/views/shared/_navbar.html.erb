@@ -5,8 +5,8 @@
       <div class="d-flex align-items-center">
         <% if current_user %>
         <%# button_to "Dashboard", root_path , :class=>"btn btn-light bg-gradient m-1" %>
-        <%= link_to "Dashboard",root_path, class: "btn btn-link border border-light mr-1" %>
-          <%= button_to "Logout", logout_path ,method: :delete, :class=>"btn btn-link border border-light m-1" %>
+        <%= link_to "Dashboard",root_path, class: "btn btn-light border border-light mr-1" %>
+          <%= button_to "Logout", logout_path ,method: :delete, :class=>"btn btn-light border border-light m-1" %>
           <span class="text-info m-2"> Online : <%= current_user.name %> </span>
           <% else %>
           <%# button_to "Login", login_path,:class=>"btn btn-warning m-1" %>
